@@ -37,6 +37,7 @@ out/
 .vscode/
 
 ### Local coaching documents (README.md is public) ###
+/.codex/
 *.[mM][dD]
 !README.md
 
