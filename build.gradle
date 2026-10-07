@@ -30,6 +30,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    // Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // 비밀번호 해시 (Spring Security 전체가 아닌 crypto 모듈만)
+    implementation 'org.springframework.security:spring-security-crypto'
+
     // 테스트 코드에서도 Lombok 사용
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
