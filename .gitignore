@@ -65,3 +65,6 @@ secrets/
 *.log
 logs/
 .local-data/
+
+### Local practice code (not committed) ###
+/src/test/java/msintacs/seatreservation/practice/
