@@ -24,6 +24,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
 @SpringBootTest
 @ActiveProfiles("local")
@@ -60,6 +61,7 @@ class MemberControllerTest {
                 """.formatted(email, password);
 
         mockMvc.perform(post("/api/members")
+                        .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))
                 .andDo(print())
@@ -90,6 +92,7 @@ class MemberControllerTest {
 
 
         mockMvc.perform(post("/api/members")
+                        .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))
                 .andDo(print())
@@ -98,6 +101,7 @@ class MemberControllerTest {
         long memberRowCount = memberRepository.count();
 
         mockMvc.perform(post("/api/members")
+                        .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))
                 .andDo(print())
@@ -123,6 +127,7 @@ class MemberControllerTest {
         long memberRowCount = memberRepository.count();
 
         mockMvc.perform(post("/api/members")
+                        .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))
                 .andDo(print())
@@ -145,6 +150,7 @@ class MemberControllerTest {
                 """;
 
         mockMvc.perform(post("/api/members")
+                        .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))
                 .andDo(print())
